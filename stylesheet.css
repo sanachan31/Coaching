@@ -291,7 +291,7 @@ header {
 /*=====コーチングとは=========================*/
 /* #region top */
 /*-----テキスト1段目-------------------*/
-.yo-text-outer {
+.text {
   background-color: rgb(255, 255, 255, 0.9);
   border: 1px solid #663100;
   box-shadow: 4px 4px 8px rgb(102, 49, 0, 0.2);
@@ -299,12 +299,20 @@ header {
   margin: 0 auto;
   text-align: justify;
 }
-.yo-text-inner1 {
-  padding: 3vw 5vw;
+.co-text-inner1 {
+  padding: 3vw 0 1.5vw 0;
 }
 .co-shape {
   width: 70vw;
   margin: 1.5vw 0 0 0;
+}
+.yo-text {
+  width: 43vw;
+  margin: 1.5vw auto ;
+  padding: 1.5vw 5vw;
+  border: 1px solid rgb(102, 49, 0, 0.2);
+  box-shadow: 4px 4px 8px #ffe2c6;
+  color: #ff7b00;
 }
 /* #endregion top */
 /*=====自分の人生=============================*/
@@ -329,14 +337,6 @@ header {
   margin: 0 auto 1.5vw auto;
   display: block;
 }
-#yourself .yo-text {
-  width: 43vw;
-  margin: 1.5vw auto ;
-  padding: 1.5vw 5vw;
-  border: 1px solid rgb(102, 49, 0, 0.2);
-  box-shadow: 4px 4px 8px #ffe2c6;
-  color: #ff7b00;
-}
 /*-----テキスト2段目------------------*/
 #yourself .text p:nth-child(5) {
   padding: 1.5vw 0;
@@ -346,7 +346,10 @@ header {
   border: 1px solid rgb(102, 49, 0, 0.2);
   box-shadow: 4px 4px 8px #ffe2c6;
 }
-.yo-text2 span {
+.yo-small {
+  color: #ff7b00;
+}
+.yo-large {
   font-size: clamp(20px, 1.8vw, 35px);
   color: #ff7b00;
 }
@@ -771,30 +774,30 @@ footer p {
     width: 90vw;
   }
 /* #endregion */
+/*=====SP1 コーチングとは=========================*/
+/* #region top */
+.co-shape {
+  margin: 0 auto 3vw auto;
+  padding-bottom: 0;
+}
+#coaching .text dt span {
+  letter-spacing: 0.15em;
+}
+.yo-text {
+  width: 60vw;
+}
+.yo-text-outer img {
+  width: 30vw;
+}
+/* #endregion */
 /*=====SP1 自分の人生=============================*/
 /* #region top */
-  #yourself .text img {
-    margin: 0 auto 3vw auto ;
+  #yourself .text {
+    width: 55vw;
   }
   #yourself .yo-text {
     margin: 3vw auto 0 auto;
-    width: 65vw;
-  }
-/* #endregion */
-/*=====SP1 コーチングとは=========================*/
-/* #region top */
-  .co-shape {
-    margin: 0 auto 3vw auto;
-    padding-bottom: 0;
-  }
-  #coaching .text dt span {
-    letter-spacing: 0.15em;
-  }
-  .yo-text {
     width: 40vw;
-  }
-  .yo-text-outer img {
-    width: 30vw;
   }
 /* #endregion */
 /*=====SP1　3ステップ=============================*/
@@ -914,33 +917,24 @@ footer p {
   .wo-figure {
     margin: 15vw auto 0 auto;
   }
-/* #endregion top */
-/*=====SP1 自分の人生========================*/
-/* #region top */
-  #yourself .text img {
-    margin: 3vw auto ;
-  }
-/* #endregion */  
+/* #endregion top */  
 /*=====SP2 コーチングとは=====================*/
 /* #region top */
-  .co-shape {
-    width: 30vw;
-    margin: 3vw auto;
-  }
-  .yo-text {
-    width: 45vw;
-    top: 5vw;
-    left: 12vw;
-  }
-  .yo-text p:nth-child(1) {
-    padding-top: 0;
-  }
   .yo-text-outer img {
     width: 38vw;
     padding-bottom: 5vw;
     margin: 3vw 12vw 0 auto;
   }
 /* #endregion top */
+/*=====SP1 自分の人生========================*/
+/* #region top */
+#yourself {
+  background: url(img/coaching-4.jpg) no-repeat top left 35% /cover;
+}
+#yourself .text img {
+  margin: 3vw auto ;
+}
+/* #endregion */
 /*=====SP2 3ステップ=========================*/
   /* #region top */
   .three-step {
@@ -1103,44 +1097,40 @@ footer p {
     margin: 30px auto 0 auto;
   }
 /* #endregion */
-/*=====SP3 自分の人生=======================*/
-/* #region top */
-  #yourself .text img {
-    width: 80vw;
-    margin: 0 auto 3vw auto;
-  }
-  #yourself .yo-text {
-    width: 80vw;
-  }
-/* #endregion */
 /*=====SP3 コーチングとは================*/
 /* #region top */
   .co-shape {
-    width: 90vw;
+    width: 98vw;
     margin: 3vw auto;
   }
-/*-----テキスト1段目---------------*/
-  .yo-text-inner1
- {
-    display: block;
-  }
-  #coaching .text dl {  
-    display: block;
+/* #endregion */
+/*=====SP3 自分の人生=======================*/
+/* #region top */
+  #yourself {
+    background: url(img/coaching-4.jpg) no-repeat top left /150%;
+    padding-bottom: 0;
   }
 /*-----テキスト2段目-------------*/
-.yo-text-outer {
-  flex-direction: column-reverse
-}
-   .yo-text {
-    width: 80vw;
+  #yourself .section-title {
     margin: 0 auto;
   }
-  .yo-text-outer img {  
-    width: 50vw;
-    margin: 0 auto 20px auto;
+  #yourself .text-box {
+    width: 95vw;
+    margin: 65vw auto 0 auto;
   }
-  .yo-text p {
-    padding-top: 20px;
+  #yourself .text {
+    width: 95vw;
+  }
+  #yourself .text img {
+    width: 92vw;
+    margin: 20px auto 30px auto;
+  }
+  #yourself .yo-text {
+    margin: 30px 0;
+    width: 80vw;
+  }
+  .yo-text2 {
+    margin: 20px 0;
   }
 /* #endregion */
 /*=====SP3 3ステップ===================*/
