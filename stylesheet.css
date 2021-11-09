@@ -1,0 +1,1279 @@
+@charset "utf-8";
+
+/* ===全体  Fimal Caching==== */
+/* #region top */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  color: #663100;
+  font-size: clamp(14px, 1vw, 20px);
+  line-height: 2;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Arial", "GenJyuuGothic", sans-serif;
+  scroll-behavior: smooth;
+}
+/*-----ノーマル-----*/
+@font-face {
+  font-family:"GenJyuuGothic";
+  src: url('./font/GenJyuuGothic-Medium.woff') format('woff'),
+       url('./font/GenJyuuGothic-Medium.ttf') format('ttf'),
+       url('./font/GenJyuuGothic-Medium.eot') format('eot');
+  font-weight: normal;
+  font-style: normal;
+}
+/*-----bold-----*/
+@font-face {
+  font-family: "GenJyuuGothic";
+  src: url('./font/GenJyuuGothic-Bold.woff') format('woff'),
+       url('./font/GenJyuuGothic-Bold.ttf') format('ttf'),
+       url('./font/GenJyuuGothic-Bold.eot') format('eot');
+  font-weight: bold;
+  font-style: normal;;
+}
+a {
+  text-decoration: none;
+  color: #663100;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+h1,h2 {
+  line-height: 1;
+  margin: 0;
+}
+nav, ul, li {
+  list-style: none;
+}
+figure {
+  padding: 0;
+  margin: 0;
+}
+.section-title {
+  width: 40vw;
+  text-align: center;
+  margin: 0 auto 3vw auto;
+  padding-top: clamp(60px, 7vw, 150px);
+}
+/*-----テキストbox-------------*/
+.text-box {
+  margin: 0 auto;
+  width: 63vw;
+}
+.text {
+  background-color: rgb(255, 255, 255, 0.9);
+  border: 1px solid #663100;
+  box-shadow: 4px 4px 8px rgb(102, 49, 0, 0.2);
+  padding: 3vw 5vw;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: justify;
+}
+/* #endregion top */
+/*=====ヘッダー===============================*/
+/* #region top */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between; 
+}
+.logo {
+  padding: 0 0 0 5vw;
+  margin-top: 1vw;
+}
+.logo a {
+  display: inline-block;
+  border-radius: 60px;
+}
+.logo img {
+  width: clamp(200px, 15vw, 300px);
+}
+.nav {
+  padding: 0 5vw 0 0;
+  margin-top: 2vw;
+} 
+/*-----ハンバーガーメニュ-----------------*/
+/* #region */
+  .hamburger {
+    transition: 0.5s;  /* アニメーションの時間を指定 */
+    margin: 0 auto;
+  }
+  .hamburger:hover {
+    opacity: 0.5;
+  }
+  .hamburger-menu {
+    width: 60px;  /*----a要素(押せる)範囲----*/
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hamburger-menu div {
+    width: 40px;    /*-----線の大きさ------*/
+    height: 4px;
+    background-color: #ff9633;
+    margin: 3px auto;
+    border-radius: 10px;
+  }
+  .hamburger + .sidenavs:target {
+    overflow-x: visible;   /* ボックスからはみ出る箇所をそのまま表示 */
+    width: clamp(250px, 19vw, 380px);  /* サイドメニューの幅 */
+    display:block;
+  }
+  .sidenavs:target {
+    overflow-x: hidden;   /* ボックスからはみ出る箇所を隠す */
+    width: 0;
+  }
+  /*-----ハンバーガーメニュー表示時-----------*/
+  .sidenavs {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgb(255, 226, 198, 0.9);
+    overflow-x: hidden;   /* 横スクロールを無効にする */
+    padding-top: 60px;
+    transition: 1.3s;   /* スライド時にかかる時間を指定 */
+  }
+  /* ハンバーガーメニュー表示時のリンク */
+  .sidenavs a {
+    font-size: 1.3vw;
+    color: #663100;
+    display: block;
+    transition: 1.0s;  /* スライド時にかかる時間を指定 */
+  }
+  /* マウスオーバー後のリンク */
+  .sidenavs a:hover {
+    background-color: rgb(255, 150, 51, 0.3);
+  }
+  .nav-list-sp a {
+    padding: 8px 8px 8px 8px;
+    background: #ffffff;
+    border-radius:60px; 
+    text-align: center;
+  }
+  .sidenavs li {
+    margin: clamp(20px, 1.5vw, 30px) auto;
+    width: clamp(200px, 15vw, 300px);
+    border-radius:10px;
+  }
+  /*-------クローズボタン----------*/
+  .sidenavs .close-btn {
+    position: absolute; 
+    top: 0;
+    right: 25px;
+  }
+  .sidenavs .close-btn p {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 50px;     /*---✕の大きさ---*/
+  }
+/* #endregion */
+/* #endregion top */
+/*=====メインヴィジュアル=====================*/
+/* #region top */
+#mainvisual {
+  background: url(img/mainvisual-1.jpg) no-repeat top 5% center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  color: #ffffff;
+}
+.mv-copy {
+  font-size: clamp(30px, 2.5vw, 48px);
+  margin: 0 10vw 0 auto;
+  padding-top: 8vw;
+  text-align: right;
+  line-height: 45px;
+}
+.mv-spbr {
+  display: none;
+}
+.mv-copy .mv-large {
+  font-size: clamp(50px, 4.5vw, 90px);
+}
+.mv-copy .mv-medium {
+  font-size: clamp(38px, 3vw,60px);
+}
+.mv-copy img {
+  width: 50vw;
+}
+.mv-text {
+  font-size: clamp(25px, 1.8vw, 34px);
+  white-space: nowrap;
+  margin: 2vw 10vw 0 auto;
+  text-align: right;
+}
+.mv-text p:nth-child(2) {
+  font-size: clamp(18px, 1.2vw, 23px);
+}
+/*-----プレゼント  PC------------------*/
+.present {
+  width: 35vw;
+  position: absolute;
+  bottom: 12vw;
+  right: 10vw;;
+}
+/*-----PV-----------------------------*/
+.mv-pv { 
+  width: 22vw;
+  height: auto;
+  margin: 2vw 0 0 0;
+  position: absolute;
+  bottom: 2vw;
+  left: 10%;
+}
+.mv-pv iframe {
+  display: block;
+  width: 22vw;
+  height: 12.3vw;
+}
+.mv-pv p {
+  font-size: 1vw;
+  white-space: nowrap;
+}
+/*-----体験コーチング帯1  PC-----------*/
+.mv-coaching {
+  width: 50vw;
+}
+.mv-coaching-sp {
+  display: none;
+}
+.mv-coaching .band {
+  width: 50vw;
+  height: 9vw;
+  position: absolute;
+  bottom: 2vw;
+  right: 10vw;
+}
+.mv-btn img {
+  width: 20vw;
+  height: 4vw;
+  position: absolute;
+  bottom: 4.8vw;
+  right: 15vw;
+  display: block;
+  opacity: 1;
+}
+.mv-btn img:hover {
+  opacity: 0.4;
+  color: rgba(255, 255, 255 0.9);
+}
+
+/* #endregion top */
+/*=====悩み===================================*/
+/* #region top */
+#worries {
+  background: url(img/worries-1.jpg) no-repeat center top / 100vw, 30vh;
+  margin: 0 auto;
+}
+.wo-figure {
+  width: 63vw;
+  margin: clamp(40px, 20vw, 400px) auto 0 auto;
+}
+/* #endregion top */
+/*=====自分の人生=============================*/
+/* #region top */
+#yourself .text img {
+  width: 40vw;
+  margin: 0 auto 1.5vw auto;
+  display: block;
+}
+#yourself .yo-text {
+  width: 43vw;
+  margin: 1.5vw auto 0 auto;
+  padding: 1.5vw 5vw;
+  display: block;
+  border: 1px solid rgb(102, 49, 0, 0.2);
+  box-shadow: 4px 4px 8px #ffe2c6;
+  color: #ff7b00;
+}
+/* #endregion top */
+/*=====コーチングとは=========================*/
+/* #region top */
+/*-----テキスト1段目-------------------*/
+.co-text-outer1, 
+.co-text-outer2 {
+  display: flex;
+  justify-content: center;
+}
+.co-shape {
+  width: clamp(250px, 20vw, 450px);
+  display: block;
+  padding: 1.5vw 3vw 1.5vw 0;
+  object-fit: contain;
+}
+#coaching .text dl {     
+  padding-bottom: 20px;
+}
+#coaching .text dt {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+#coaching .text dt span {
+  letter-spacing: 0.115em;
+}
+/*-----テキスト2段目------------------*/
+.co-text-outer2 {
+  align-items: center;
+}
+.co-text {   
+  width: 30vw;
+}
+.co-text p:nth-child(2) {
+  padding-top: 30px;
+}
+.co-text span {
+  font-size: clamp(20px, 2vw, 40px);
+  letter-spacing: 0.08em;
+  color: #ff7b00;
+  display: inline-block;
+}
+.co-text-outer2 img {
+  width: 21vw;
+  margin: 0 0 0 3vw;
+  display: block;
+  object-fit: contain;
+}
+/* #endregion top */
+/*=====3ステップ==============================*/
+/* #region top */
+.three-step {
+  width: 40vw;
+  margin: 0 auto 30px auto;
+  transform: translateX(-1vw);
+}
+/*-----体験コーチング帯2 PC---------------*/
+.co-coaching {
+  width: 100vw;
+  margin-top: 1.5vw;
+  position: relative;
+}
+.co-coaching img {
+  height: 9vw;
+}
+.co-btn img {
+  width: 20vw;
+  height: 4vw;
+  position: absolute;
+  bottom: 3.2vw;
+  right: 10vw;
+  display: block;
+  opacity: 1;
+}
+.co-btn img:hover {
+  opacity: 0.5;
+}
+.co-coaching-sp {
+  display: none;
+}
+/* #endregion */
+/*=====私について=============================*/
+/* #region top */
+/*-----PV-----------------------------*/
+.in-pv { 
+  width: 40vw;
+  margin: 2vw auto 5vw auto;
+}
+.in-pv p {
+  font-size: 1.6vw;
+}
+.in-pv iframe {
+  display: block;
+  width: 40vw;
+  margin: 0 auto;
+}
+/*-----自己紹介-----------------------*/
+#introduction .text {
+  padding: 3vw 5vw 1vw 5vw;
+}
+.in-flexcontainer {  
+  display: flex;
+}
+.in-portrait {
+  width: 17vw;
+  object-fit: contain;
+  margin: 0 1.8vw 1.5vw 0;
+  align-self: flex-start;
+}
+.in-flexcontainer span {
+  font-size: 1.8vw;
+  padding-bottom: 1.5vw;
+  display: inline-block;
+}
+.in-flexcontainer p:nth-child(1) {
+  padding-bottom: 1.5vw;
+}
+#introduction .text p:nth-child(2) {
+  padding-bottom: 1.5vw;
+}
+/*-----SNS ロゴ-----------------------*/
+.sns-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sns-logo a {
+  width: clamp(40px, 3vw, 60px);
+  margin: 1vw 2vw;
+}
+.sns-logo a:hover {
+  opacity: 0.5;
+}
+.sns-logo .youtube {
+  width: clamp(70px, 5vw, 100px);   
+  margin: 2.6vw 1vw;
+}
+.sns-logo .youtube img {
+  display: block;
+  align-self: center;
+}
+/* #endregion top */
+/*=====お客様の声=============================*/
+/* #region top */
+.vo-text,
+.vo-text-right,
+.vo-text-left {
+  background-color: rgb(255, 255, 255, 0.9);
+  border: 1px solid #663100;
+  box-shadow: 4px 4px 0.5vw #e6e6e6;
+}
+.vo-text {
+  padding: 0 0 3vw 0;
+  display: inline-block;
+  margin: 0 auto;
+}
+/*-----1段目 Yさん---------------------*/
+/* #region */
+.vo-flexouter {    
+  display: flex;
+}
+.vo-flexouter img {
+  width: 17vw;
+  object-fit: contain;
+  align-self: flex-start;
+  margin: 0 5vw 1.5vw 0;
+}
+.vo-flexinner {
+  padding: 3vw 5vw 1vw 0;
+}
+.vo-flexinner span,
+.vo-text-left span, 
+.vo-text-right span {
+  font-size: clamp(20px, 1.75vw, 35px);
+}
+.vo-flexinner p:nth-child(2) {
+  padding-bottom: 1.5vw;  
+}
+/* #endregion */
+/*-----2段目以降---------------------*/
+/* #region */
+.vo-text-p {
+  padding: 0 6vw;
+}
+.vo-text-box {
+  margin-top: clamp(30px, 3vw, 60px);
+}
+.vo-text-right,
+.vo-text-left {
+  display: flex;
+  align-items: center;
+}
+.vo-text-right {  /*-----右に画像------*/
+  flex-direction: row-reverse;
+  padding: 0 0 0 5vw;
+}
+.vo-text-right img {
+  width: 20vw;
+  padding-left: 5vw;
+  object-fit: contain;
+}
+.vo-text-left {  /*-----左に画像------*/
+  padding: 0 5vw 0 0;
+  display: flex;
+}
+.vo-text-left img {
+  width: 20vw;
+  padding-right: 5vw;
+  object-fit: contain;
+}
+/*------体験コーチング帯3-------------------------*/
+#voice .co-coaching {
+  margin-top: 7vw;
+}
+
+/* #endregion top */
+/* #endregion */
+/*=====Ｑ＆Ａ=================================*/
+/* #region top */
+.qu-wrapper *, .qu-wrapper *:after, .qu-wrapper *:before {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.qu-wrapper {
+  margin: 0 auto;
+}
+.qu-tab {
+	position: relative;
+	overflow: hidden;
+	width: 63vw;
+	margin: 0 auto 1em auto;
+	color: #663100;
+}
+.qu-tab input {
+	position: absolute;
+	opacity: 0;
+}
+/*-----質問----------------------------*/
+.qu-tab label {
+	font-weight: bold;
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 1em 2em;
+	cursor: pointer;
+	text-indent: 1em;
+	background: rgba(102, 49, 0, 0.1);
+}
+.qu-tab label::before {
+	font-size: 1.5em;
+	padding-right: 0.5em;
+	content: 'Q';
+}
+.qu-tab label:hover {
+	transition: all 0.3s;
+	color: #ff7b00;
+  background: rgba(255,226, 198, 0.5) ;
+}
+/*-----質問の▼アイコン----------------*/
+.qu-tab label::after {
+	font-size: 1.7em;
+	font-weight: bold;
+	line-height: 2em;
+	position: absolute;
+	top: 0.5em;
+	right: 1em;
+	content: '\025bc';  /*----▼アイコン----*/
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	-webkit-transition: transform 0.5s;
+	        transition: transform 0.5s;
+}
+/*-----答え--------------------------*/
+.qu-tab-content {
+	position: relative;
+	overflow: hidden;
+	max-height: 0;
+	padding: 0 0 0 2.5em;
+	-webkit-transition: max-height 0.5s;
+	        transition: max-height 0.5s;
+}
+.qu-tab-content::before {
+	font-size: 1.5em;
+	position: absolute;
+	margin: 0.4em 0 0 -1em;
+	padding: 0;
+	content: 'A';
+}
+.qu-tab-content p {
+	margin: 1em 1em 1em 0;
+}
+/*-----質問を開いた時の仕様--------------------*/
+/*-----答えの高さ--------------*/
+.qu-wrapper .qu-tab input:checked ~ .qu-tab-content {
+	max-height: 40em;
+	border: 10px solid rgba(255, 226, 198, 0.5);
+}
+/*-----質問をクリックした時のアイコンの動き-----*/
+.qu-wrapper .qu-tab input:checked ~ label {
+	color: #ff7b00;
+}
+/*-----質問をクリックした時の+の動き-------*/
+.qu-wrapper .qu-tab input[type=checkbox]:checked + label::after {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+/* #endregion top */
+/*=====ハッピー===============================*/
+/* #region top */
+#happy {
+  background: url(img/happy-1.jpg) no-repeat center left 30% /cover;
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 7vw;
+  margin-top: clamp(80px, 7vw, 150px);
+}
+#happy .section-title {
+  margin: 0 auto 1.5vw 9.5vw;
+  padding-top: 3vw;
+}
+#happy .text-box {
+  width: 45vw;
+  margin: 0 auto 0 7vw;
+}
+.ha-satisfaction {
+  color: #ff7b00;
+  font-size: 1.5vw;
+}
+.ha-satisfaction,
+.ha-fight {
+  margin: clamp(20px, 1.5vw, 30px ) 0;
+}
+.ha-fight span {
+  color: #ff7b00;
+}
+#happy .text p:last-child {
+  margin-top: clamp(20px, 1.5vw, 30px );
+}  
+/* #endregion top */
+/*=====体験コーチング===============*/
+/* #region */
+.ex-flexouter {  /*-------申込み---------------*/
+  display: flex;
+}
+.ex-flexinner {
+  display: flex;
+  flex-direction: column;
+} 
+.welcome {
+  color: #ff7b00;
+  font-size: clamp(18px, 1.5vw, 30px);
+  padding-top: 0.5vw;
+  display: block;
+}
+.ex-flexinner p:nth-child(2) {
+  margin: 2vw 0 0 0;
+  font-size: 1.5vw;
+}
+.ex-logo {
+  width: 20vw;
+  margin: 1vw 0 0 0;
+}
+.ex-logo:hover {
+  opacity: 0.5;
+}
+.inperson {
+   width: 20vw;
+  margin-left: clamp(20px, 1.5vw, 30px);
+  object-fit: contain;
+}
+/* #endregion */
+/*=====フッター===============================*/
+/* #region top */
+footer {
+  margin-top: 7vw;
+  background-color: rgba(255, 226, 198, 0.5);
+  box-shadow: 4px 4px 8px rgb(102, 49, 0, 0.8);
+}
+.sns-logo {
+  padding: clamp(20px, 2vw, 40px) 0 clamp(10px, 1vw, 20px) 0;
+}
+footer p {
+  text-align: center;
+  padding-bottom: clamp(20px, 3vw, 60px);
+}
+/* #endregion top */
+/*=====PC↑===================================*/
+.wrap {
+  overflow: hidden;
+}
+
+/*======================================
+     SP 1   1024px
+=======================================*/
+@media screen and (max-width: 1024px) {
+  .text-box {
+    width: 90vw;
+  }
+  .text {
+    padding: 5vw;
+  }
+/*=====ヘッダー===============================*/
+/* #region top */
+  .nav, .logo {
+    margin-top: 4vw;
+  } 
+/* #endregion*/
+/*=====SP1　メインビジュアル=====================*/
+/* #region top */
+  #mainvisual {
+    background: url(img/mainvisual-1-1.jpg) no-repeat top 56% left 50% /150%;
+  }
+  .mv-copy {
+    margin: 0 9vw 0 auto;
+    padding-top: 20vw;
+    backdrop-filter: blur(3px);
+  }
+  .mv-text {
+    margin: 2vw 9vw 0 auto;
+    backdrop-filter: blur(3px);
+  }
+/*-----プレゼント  PC------------------*/
+  .present {
+    width: 45vw;
+    bottom: 22vw;
+    right: 8vw;
+}
+/*-----PV-----------------------------*/
+  .mv-pv { 
+    width: 35vw;
+    bottom: 22vw;
+    left: 8vw;
+  }
+  .mv-pv iframe {
+    width: 35vw;
+    height: 19.37vw
+  }
+  .mv-pv p {
+    font-size: 1vw;
+    white-space: nowrap;
+    backdrop-filter: blur(2px);
+  }
+/*-----体験コーチング帯1 SP1-------------*/
+  .mv-coaching .band {
+    width: 60vw;
+    bottom: 9vw;
+    right: 8vw;
+  }
+  .mv-coaching img {
+    height: 14vw;
+  }
+  .mv-btn img {
+    height: 4vw;
+    bottom: 12vw;
+    right: 15vw;
+  }
+/* #endregion */
+/*=====SP1 悩み===================================*/
+/* #region top */
+  .wo-figure {
+    width: 90vw;
+  }
+/* #endregion */
+/*=====SP1 自分の人生=============================*/
+/* #region top */
+  #yourself .text img {
+    margin: 0 auto 3vw auto ;
+  }
+  #yourself .yo-text {
+    margin: 3vw auto 0 auto;
+    width: 65vw;
+  }
+/* #endregion */
+/*=====SP1 コーチングとは=========================*/
+/* #region top */
+  .co-shape {
+    margin: 0 auto 3vw auto;
+    padding-bottom: 0;
+  }
+  #coaching .text dt span {
+    letter-spacing: 0.15em;
+  }
+  .co-text {
+    width: 40vw;
+  }
+  .co-text-outer2 img {
+    width: 30vw;
+  }
+/* #endregion */
+/*=====SP1　3ステップ=============================*/
+/* #region top */
+  .three-step {
+   width: 55vw;
+   transform: translateX(-1.5vw);
+  }
+/* #endregion top */
+/*=====SP1 私について=============================*/
+/* #region top */
+  .in-pv, .in-pv iframe {
+    width: 55vw;
+  }
+  .in-portrait {
+    width: 22vw;
+  }
+/*-----体験コーチング帯1 SP1-------------*/ 
+  .co-coaching {
+    padding-top: 7vw;
+  }
+  .co-coaching img {
+    height: 14vw;
+  }
+  .co-btn img {
+    height: 4vw;
+    bottom: 6.2vw;
+  }
+/* #endregion */
+/*=====SP1 お客様の声=============================*/
+/* #region top */
+  .vo-flexouter img {
+    width: 20vw;
+  } 
+  .vo-text-right img,
+  .vo-text-left img {
+    width: 23vw;
+  }
+  /* #endregion */
+/*=====SP1　ハッピーに============================*/
+/* #region top */
+  #happy .text-box {
+    width: 50vw;
+    margin: 0 auto 0 5vw;
+  }
+/* #endregion */
+/*=====SP1 体験コーチング==============*/
+/* #region */
+  /*-------申込み---------------------*/
+  .inperson {
+    width: 25vw;
+  }
+  .ex-logo {
+    width: 25vw
+  }
+/* #endregion*/
+/*=====SP1　↑====================================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+
+/*============================================
+    デバイス横1 iPad横 768px〜1024px
+=============================================*/
+@media only screen and (min-device-width: 768px) and (max-device-width:1024px) and (orientation: landscape) {  
+
+/*=====横1 mメインビジュアル=================*/
+/* #region top */
+  #mainvisual {
+    background: url(img/mainvisual-1.jpg) no-repeat top center/cover;
+  }
+  .mv-copy {
+    padding-top: 12vw;
+  }
+/*-----プレゼント  PC------------------*/
+  .present {
+    width: 45vw;
+    bottom: 12vw;
+    right: 7vw;
+  }
+/*-----PV-----------------------------*/
+  .mv-pv { 
+    width: 25vw;
+    bottom: 12vw;
+    left: 7vw;
+  }
+  .mv-pv iframe {
+    width: 25vw;
+    height: 14.06vw
+  }            
+/*-----体験コーチング帯1 SP1-------------*/
+  .mv-coaching .band {
+    bottom: 2vw;
+    right: 7vw;
+  }
+  .mv-btn img {
+    bottom: 5vw;
+  }
+/* #endregion */
+/*=====SP↑==================================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+
+/*======================================
+     SP 2  768px
+=======================================*/
+@media screen and (max-width: 768px) { 
+  .section-title {
+    width: 70vw;
+  }
+/* #endregion top */
+/*=====悩み===================================*/
+/* #region top */
+  .wo-figure {
+    margin: 15vw auto 0 auto;
+  }
+/* #endregion top */
+/*=====SP1 自分の人生========================*/
+/* #region top */
+  #yourself .text img {
+    margin: 3vw auto ;
+  }
+/* #endregion */  
+/*=====SP2 コーチングとは=====================*/
+/* #region top */
+  .co-shape {
+    width: 30vw;
+    margin: 3vw auto;
+  }
+  .co-text {
+    width: 45vw;
+    top: 5vw;
+    left: 12vw;
+  }
+  .co-text p:nth-child(1) {
+    padding-top: 0;
+  }
+  .co-text-outer img {
+    width: 38vw;
+    padding-bottom: 5vw;
+    margin: 3vw 12vw 0 auto;
+  }
+/* #endregion top */
+/*=====SP2 3ステップ=========================*/
+  /* #region top */
+  .three-step {
+    width: 70vw;
+    margin: 0 auto 30px auto;
+  }
+/* #endregion top */
+/*=====SP2 私について=============================*/
+/* #region top */
+.in-pv p {
+  font-size: 2.1vw;
+}
+.in-flexcontainer span {
+  font-size: 2.3vw;
+}
+/* #endregion */
+/*=====SP2 お客様の声=============================*/
+/* #region top */
+  .vo-flexouter img, 
+  .vo-text-right img,
+  .vo-text-left img {
+    width: 30vw;
+  }
+/* #endregion */
+/*=====SP2 Ｑ＆Ａ=============================*/
+/* #region top */
+.qu-tab {
+  width: 90vw;
+}
+/* #endregion */
+/*=====SP2 ハッピーに=============================*/
+/* #region top */
+  #happy {
+    background: url(img/happy-2.jpg) no-repeat top right 43% /cover;
+  }
+  #happy .section-title {
+    margin: 0 auto 0 auto;
+    padding-top: 3vw;
+  }
+/* #endregion*/
+/*=====SP3 体験コーチング===================*/
+/* #region */
+
+
+/* #endregion */
+/*=====SP2　↑====================================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*======================================
+     SP 3   414px
+=======================================*/
+@media screen and (max-width: 414px) {
+  .text-box {
+    width: 94vw;
+  }
+  .text {
+    box-shadow: 0px 4px 6px rgb(102, 49, 0, 0.2);
+  }
+  .section-title {
+    padding-top: 40px;
+    width: 90vw;
+  }
+/*=====ヘッダー===============================*/
+/* #region top */
+.logo img {
+  width: 180px;
+}
+.hamburger-menu {
+  width: 50px;  /*----a要素(押せる)範囲----*/
+  height: 40px;
+}
+.hamburger-menu div {
+  width: 30px;    /*-----線の大きさ------*/
+  height: 4px;
+}
+/* #endregion top */
+/*=====メインヴィジュアル SP3================*/
+/* #region top */
+  #mainvisual {
+    background: url(img/mainvisual-1-1.jpg) no-repeat top 60% left 50% / 170%;
+    height: 100vh;
+  }
+  .mv-copy, .mv-text {
+    margin-right: 0;
+    text-align: center;
+  }
+  .mv-copy {
+    font-size: 25px;
+    padding-top: 100px;
+    letter-spacing: 0.1em;
+    line-height: 45px;
+    backdrop-filter: 
+  }
+  .mv-spbr {
+    display: block;
+  }
+  .mv-copy .mv-large {
+    font-size: 40px;
+  }
+  .mv-copy .mv-medium {
+    font-size: 30px;
+  }
+  .mv-text {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top:15px;
+  }
+  .mv-text p:nth-child(2) {
+    font-size: 14px;
+  }
+/*-----プレゼント  PC------------------*/
+.present {
+  width: 48vw;
+  bottom: 32vw;
+  right: 1vw;
+}
+/*-----PV-----------------------------*/
+.mv-pv { 
+  width: 48vw;
+  bottom: 32vw;
+  left: 1vw;
+}
+.mv-pv iframe {
+  width: 48vw;
+  height: 27vw
+}
+.mv-pv p {
+  font-size: 1vw;
+  white-space: nowrap;
+  line-height: 20px;
+}  
+/*-----体験コーチング帯1  SP3------------*/
+  .mv-coaching {
+    display: none;
+  }  
+  .mv-coaching-sp {
+    display: block;
+  }
+  .mv-coaching-sp .band {
+    position: absolute;
+    bottom: 2vw;
+    left: 0;
+    display: block;
+  }
+  .mv-btn img {
+    width: 35vw;
+    height: 11.57vw;
+    position: absolute;
+    bottom: 10vw;
+    right: 8vw;
+    display: block;
+  }
+  /* #endregion */
+/*=====SP3 悩み=============================*/
+/* #region top */
+  .wo-figure {
+    margin: 30px auto 0 auto;
+  }
+/* #endregion */
+/*=====SP3 自分の人生=======================*/
+/* #region top */
+  #yourself .text img {
+    width: 80vw;
+    margin: 0 auto 3vw auto;
+  }
+  #yourself .yo-text {
+    width: 80vw;
+  }
+/* #endregion */
+/*=====SP3 コーチングとは================*/
+/* #region top */
+  .co-shape {
+    width: 40vw;
+    margin: 3vw auto;
+  }
+/*-----テキスト1段目---------------*/
+  .co-text-outer1 {
+    display: block;
+  }
+  #coaching .text dl {  
+    display: block;
+  }
+/*-----テキスト2段目-------------*/
+.co-text-outer2 {
+  flex-direction: column-reverse
+}
+   .co-text {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .co-text-outer2 img {  
+    width: 50vw;
+    margin: 0 auto 20px auto;
+  }
+  .co-text p {
+    padding-top: 20px;
+  }
+/* #endregion */
+/*=====SP3 3ステップ===================*/
+/* #region top */
+.three-step {
+  width: 95vw;
+  margin: 0 auto 1.5vw auto;
+}
+/*-----体験コーチング帯2  SP3------------*/
+.co-coaching {
+  display: none;
+  margin-top: 1vw;
+}
+.co-coaching-sp {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
+.co-btn img {
+  width: 35vw;
+  height: 11.57vw;
+  position: absolute;
+  bottom: 8vw;
+  right: 9vw;
+  display: block;
+}
+/* #endregion top */
+/*=====SP３ 私について======================*/
+/* #region top */
+  .in-pv, .in-pv iframe {
+    width: 95vw;
+  }
+  /*-----自己紹介 SP3-----------------------*/
+  .in-flexcontainer {  
+    flex-direction: column;
+  }
+  .in-portrait {
+    width: 60vw;
+    margin: 0 0 20px 0;
+    align-self: center;
+  }
+  .in-flexcontainer span {
+    font-size: 20px;
+    padding-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+  .in-flexcontainer p, 
+  #introduction .text p {
+    padding-bottom: 15px;
+  }
+  #introduction .text p:nth-child(3) {
+    padding-bottom: 0;
+  }
+/* #endregion */
+/*=====SP３ お客様の声======================*/
+/* #region top */
+  /*-----1段目 Yさん---------------------*/
+  .vo-flexouter {
+    flex-direction: column;
+  }
+  .vo-flexouter img {
+    width: 40vw;
+    align-self: center;
+    margin: 0;
+    padding-top: 3vw;
+  }
+  .vo-flexinner {
+    padding: 3vw 5vw 1vw 5vw;
+  }
+  .vo-flexinner p:nth-child(2),
+  .vo-flexinner p:nth-child(3) {
+    padding-bottom: 20px;  
+  }
+/*-----2段目以降---------------------*/
+  .vo-text-right,
+  .vo-text-left {
+    flex-direction: column;
+    align-self: center;
+  }
+  .vo-text-right {  /*-----右に画像------*/
+    padding: 3vw 5vw;
+  }
+  .vo-text-right img {
+    width: 30vw;
+    padding-left: 0;
+  }
+  .vo-text-left {  /*-----左に画像------*/
+    padding: 3vw 5vw;
+  }
+  .vo-text-left img {
+    width: 30vw;
+    padding-right: 0;
+  }
+/* #endregion */
+/*=====SP2 Ｑ＆Ａ=============================*/
+/* #region top */
+.qu-tab {
+  width: 94vw;
+}
+/* #endregion */
+/*=====SP3 ハッピーに=======================*/
+/* #region top */
+  #happy {
+    background: url(img/happy-2.jpg) no-repeat top center /150%;
+    padding-bottom: 0;
+  }
+  #happy .section-title {
+    padding-top: 0;
+  }
+  #happy .text-box {
+    width: 95vw;
+    margin: 60vw auto 0 auto;
+  }
+  .ha-satisfaction {
+    font-size: 20px;
+    line-height: 30px;
+  }
+/* #endregion */
+/*=====SP3 体験コーチング===================*/
+/* #region */
+  .ex-flexouter {
+    flex-direction: column-reverse;
+  }
+  .inperson {
+    width: 60vw;
+    margin: 0 0 20px 0;
+    align-self: center;
+  }
+  .ex-logo {
+    width: 60vw;
+    margin: 20px auto 0 auto;
+  }
+  .ex-logo img {
+    width: 60vw;
+  }
+/* #endregion */
+/*=====SP3　↑====================================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
