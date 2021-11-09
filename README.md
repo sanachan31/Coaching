@@ -1,7 +1,3 @@
-# Coaching
-WCA FANAL用　コーチングサイト
-
-
 # Caching
 WCA FINAL審査用 コーチングLP　☆WEB CREATORS AWARD 2021 FINAL Task☆  
 <br>   
