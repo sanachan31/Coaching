@@ -1,8 +1,9 @@
 
 
 # Caching
-WCA FINAL審査用 コーチングLP　☆WEB CREATORS AWARD 2021 FINAL task☆  
-<br>   
+WCA FINAL審査用 コーチングLP　☆WEB CREATORS AWARD 2021 FINAL Task LP☆  
+<br>
+<br>  
 # <h3>　このサイトについて</h3>  
 ***  
  WEB CREATORS AWARD 2021 FINAL課題として作成したLPです。<br>
@@ -21,8 +22,8 @@ WCA FINAL審査用 コーチングLP　☆WEB CREATORS AWARD 2021 FINAL task☆
 　　　▷信頼感や頼りになりそうな雰囲気にして欲しい<br>
 　　　▷色は暖色系、パステルや明るい色がいい（黒と原色はNG）<br>
 　　　▷コーチングの詳細内容は掲載可だが料金は伏せて欲しい<br>
- <br>
 <br>
+<br> 
 # <h3>　ペルソナ</h3>  
 ***  
 * ターゲット ： 30代前半独身女性 
@@ -43,8 +44,6 @@ WCA FINAL審査用 コーチングLP　☆WEB CREATORS AWARD 2021 FINAL task☆
 * 比較検討 ： 他のコーチングサイトと比較
 * 購　　買  :　自分の悩みを解決してくれそうな内容なのと、まず無料体験で雰囲気をつかめそうと思って
 * 購 入 後　:　Instagramに投稿して自分の変化を報告
-<br>
-<br>
 
 
 
