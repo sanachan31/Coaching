@@ -245,20 +245,18 @@ header {
   white-space: nowrap;
 }
 /*-----体験コーチング帯1  PC-----------*/
-.mv-coaching {
-  width: 50vw;
-}
-.band-sp1, .mv-coaching-sp {
-  display: none;
-}
-.mv-coaching .band {
+.mv-coaching img:nth-child(1) {
   width: 50vw;
   height: 9vw;
   position: absolute;
   bottom: 2vw;
   right: 10vw;
 }
-.mv-btn img {
+.mv-coaching img:nth-child(2), 
+.mv-coaching-sp {
+  display: none;
+}
+.mv-coaching .mv-btn img {
   width: 20vw;
   height: 4vw;
   position: absolute;
